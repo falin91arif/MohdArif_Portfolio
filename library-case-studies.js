@@ -143,6 +143,79 @@ window.addEventListener('load', function () {
     if (dialog.open) setTimeout(setTrailerThumbnail, 560);
   }).observe(dialog, { attributes: true, attributeFilter: ['open'] });
 
+  const centralGalleries = window.portfolioGalleryData || {};
+  let galleryItems = [];
+  let galleryIndex = 0;
+  let galleryTitle = '';
+
+  function updateGalleryCounter() {
+    const count = String(galleryIndex + 1).padStart(2, '0') + ' / ' + String(galleryItems.length).padStart(2, '0');
+    document.querySelectorAll('.case-header-counter, #case-gallery-count, #gallery-count').forEach(function (counter) {
+      counter.textContent = count;
+    });
+  }
+
+  function selectGalleryItem(nextIndex) {
+    if (!galleryItems.length) return;
+    galleryIndex = (nextIndex + galleryItems.length) % galleryItems.length;
+    const item = galleryItems[galleryIndex];
+    track.querySelectorAll('.gallery-item').forEach(function (button, index) {
+      button.classList.toggle('is-selected', index === galleryIndex);
+    });
+    const oldFrame = media.querySelector('iframe');
+    if (oldFrame) oldFrame.remove();
+    media.classList.remove('is-playing');
+    if (item.type === 'video') {
+      play.style.display = 'none';
+      media.classList.add('is-playing');
+      media.insertAdjacentHTML('beforeend', '<iframe title="' + galleryTitle + ' trailer" src="https://www.youtube-nocookie.com/embed/' + item.youtubeId + '?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>');
+    } else {
+      const image = document.getElementById('case-image');
+      image.src = item.src;
+      image.alt = item.alt;
+      play.style.display = 'inline-flex';
+    }
+    updateGalleryCounter();
+  }
+
+  function renderCentralGallery() {
+    galleryTitle = document.getElementById('case-title').textContent.trim();
+    const config = centralGalleries[galleryTitle];
+    if (!config || !config.items || !config.items.length) return;
+    galleryItems = config.items;
+    galleryIndex = 0;
+    track.innerHTML = galleryItems.map(function (item, index) {
+      const thumbnail = item.type === 'video' ? 'https://i.ytimg.com/vi/' + item.youtubeId + '/hqdefault.jpg' : item.src;
+      const classes = 'gallery-item' + (index === 0 ? ' is-selected' : '') + (item.type === 'video' ? ' gallery-video-thumb' : '');
+      return '<button type="button" class="' + classes + '" data-central-gallery-index="' + index + '" aria-label="' + item.alt + '"><img src="' + thumbnail + '" alt="' + item.alt + '"></button>';
+    }).join('');
+    track.querySelectorAll('[data-central-gallery-index]').forEach(function (button) {
+      button.addEventListener('click', function () { selectGalleryItem(Number(button.dataset.centralGalleryIndex)); });
+    });
+    const trailerIndex = galleryItems.findIndex(function (item) { return item.type === 'video'; });
+    play.onclick = function () { if (trailerIndex >= 0) selectGalleryItem(trailerIndex); };
+    selectGalleryItem(0);
+  }
+
+  new MutationObserver(function () {
+    if (dialog.open) setTimeout(renderCentralGallery, 720);
+  }).observe(dialog, { attributes: true, attributeFilter: ['open'] });
+
+  dialog.addEventListener('close', function () {
+    galleryItems = [];
+    galleryTitle = '';
+  });
+
+  window.addEventListener('click', function (event) {
+    if (!dialog.open || !galleryItems.length) return;
+    const control = event.target.closest('[data-header-nav],[data-gallery]');
+    if (!control) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const direction = control.dataset.headerNav || control.dataset.gallery;
+    selectGalleryItem(direction === 'next' ? galleryIndex + 1 : galleryIndex - 1);
+  }, true);
+
   const featureHeading = document.querySelector('.featured .section-heading h2');
   if (featureHeading) featureHeading.textContent = 'Feature projects';
   document.querySelector('.featured .section-summary')?.remove();
