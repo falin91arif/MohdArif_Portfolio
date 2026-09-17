@@ -94,7 +94,8 @@ window.addEventListener('load', function () {
     document.getElementById('case-fact-three-label').textContent = active.threeLabel;
     document.getElementById('case-fact-three').textContent = active.three;
     const image = document.getElementById('case-image');
-    track.innerHTML = '<button type="button" class="gallery-item is-selected" data-library-index="0" aria-label="Project visual"><img src="' + image.src + '" alt="' + image.alt + '"></button><button type="button" class="gallery-item gallery-video-thumb" data-library-index="1" aria-label="Watch trailer"><img src="' + image.src + '" alt="Watch trailer"></button>';
+    const trailerThumbnail = 'https://i.ytimg.com/vi/' + active.video + '/hqdefault.jpg';
+    track.innerHTML = '<button type="button" class="gallery-item is-selected" data-library-index="0" aria-label="Project visual"><img src="' + image.src + '" alt="' + image.alt + '"></button><button type="button" class="gallery-item gallery-video-thumb" data-library-index="1" aria-label="Watch trailer"><img src="' + trailerThumbnail + '" alt="Watch trailer on YouTube"></button>';
     track.querySelectorAll('[data-library-index]').forEach(function (item) {
       item.addEventListener('click', function () { showItem(Number(item.dataset.libraryIndex)); });
     });
@@ -121,4 +122,29 @@ window.addEventListener('load', function () {
     const direction = control.dataset.headerNav || control.dataset.gallery;
     showItem(direction === 'next' ? selected + 1 : selected - 1);
   }, true);
+
+  const videos = {
+    'A Night With Aina Abdul 3.0': '2iyb5nZwtAY',
+    'Little Ammar': 'PGPhWPqjm6o',
+    'Didi & Friends × Darlie': 'yawTjEBhQFU',
+    'Konsert Hora Horey': 'I8d-tjcRXtM',
+    'Didi & Friends × SSPN': '0Nzwnw4sLF8',
+    'Didi & Friends × Genki': 'rZQuAW49cAY',
+    'Sirah Nabawiyah': 'GW6OpWRKFds'
+  };
+
+  function setTrailerThumbnail() {
+    const video = videos[document.getElementById('case-title').textContent.trim()];
+    const thumbnail = track.querySelector('.gallery-video-thumb img');
+    if (video && thumbnail) thumbnail.src = 'https://i.ytimg.com/vi/' + video + '/hqdefault.jpg';
+  }
+
+  new MutationObserver(function () {
+    if (dialog.open) setTimeout(setTrailerThumbnail, 560);
+  }).observe(dialog, { attributes: true, attributeFilter: ['open'] });
+
+  const featureHeading = document.querySelector('.featured .section-heading h2');
+  if (featureHeading) featureHeading.textContent = 'Feature projects';
+  document.querySelector('.featured .section-summary')?.remove();
+  document.querySelector('.links a[href="#work"]')?.replaceChildren('Feature projects');
 });

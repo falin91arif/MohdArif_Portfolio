@@ -105,6 +105,31 @@ body .more-work .archive-grid .archive-card.story::before {
   content: none !important;
 }
 
+/* Shared case-study hierarchy and responsive skill tags. */
+html body dialog#case-dialog .case-outcome-panel .case-label {
+  color: #2f6be7 !important;
+  font: 800 var(--type-meta, 12px) / 1.15 Arial, Helvetica, sans-serif !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+}
+
+html body dialog#case-dialog .case-outcome-panel .outcome {
+  font: 800 clamp(28px, 3.2vw, 38px) / 1.04 Arial, Helvetica, sans-serif !important;
+  letter-spacing: -0.05em !important;
+}
+
+.skills span {
+  cursor: default;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.skills span:hover {
+  border-color: #2f6be7 !important;
+  background: #2f6be7 !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
 @media (max-width: 900px) {
   .archive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
 }
