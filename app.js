@@ -1,0 +1,213 @@
+const projectData = {
+  'A Night With Aina Abdul 3.0': {
+    category: 'Live entertainment',
+    summary: 'Designed a unified visual campaign for Aina Abdul’s sold-out Axiata Arena concert.',
+    role: 'Graphic Designer',
+    facts: [['Scope', '5 merchandise products'], ['Partners', 'Artist team + Director']],
+    challenge: 'Create a unified visual language for a sold-out arena concert—one that felt memorable across every audience touchpoint.',
+    led: 'Engaged by the Concert Director as Graphic Designer. I developed the main poster, social-media campaign, billboard and print advertising, five merchandise products, and on-site event materials.',
+    context: 'A Night With Aina Abdul 3.0 took place on 18 November 2023 at Axiata Arena, Bukit Jalil. I worked with the Artist Team, Concert Director, Producer, and merchandise vendor. My scope was visual design; I was not responsible for event budget or scheduling.',
+    deliverables: 'Main key visual, social-media assets, physical print materials, billboard advertising, five merchandise products, and venue materials.',
+    outcome: 'One visual world for a sold-out arena concert.',
+    note: 'Around 10,000 attendees from Malaysia, Singapore, and Brunei experienced the concert on 18 November 2023.'
+  },
+  'Little Ammar': {
+    category: 'Original IP',
+    summary: 'Built a nursery-rhyme IP for ages 0–5 from early development through scalable production.',
+    role: 'Line Producer',
+    facts: [['Scale', '100+ episodes'], ['Budget', 'MYR 1M / 4 seasons']],
+    challenge: 'Build a children’s IP from scratch while making clear production decisions that protected its long-term quality and avoided endless refinement.',
+    led: 'As Line Producer, I managed end-to-end production: aligning the creative direction, team, vendors, schedule, and delivery from development through final episode production.',
+    context: 'Little Ammar launched on 18 February 2022 for children aged 0–5. Each three-minute nursery-rhyme episode has an approximately six-month production cycle with a core team of around 10 people and external vendors.',
+    deliverables: 'Three-minute nursery-rhyme videos, original songs, animation production, and repeatable workflows for a growing children’s IP.',
+    outcome: '100+ episodes across four seasons.',
+    note: 'A crowd-favourite Durioo+ original IP, developed from scratch with approximately MYR 1 million managed across four seasons.'
+  },
+  'Didi & Friends × Darlie': {
+    category: 'Branded content',
+    summary: 'Led a brand collaboration that reached 5.2M YouTube views without compromising the Didi & Friends identity.',
+    role: 'Creative Producer',
+    facts: [['Delivery', '4 months'], ['Result', '5.2M YouTube views']],
+    challenge: 'Create a branded Didi & Friends song that entertained first—not a hard-sell advertisement—while giving Darlie meaningful visibility.',
+    led: 'As Creative Producer, I monitored the full production, presented concepts to the client, led the creative team, managed revisions and approvals, and tracked performance after launch.',
+    context: 'A four-month production involving Darlie, Digital Durian, the animation team, agency partners, and talent. TVC approval with government bodies added complexity and was successfully resolved.',
+    deliverables: 'One original Malay-language Didi & Friends song, delivered in formats for YouTube, social platforms, and TVC—from 15-second cuts to a three-minute video.',
+    outcome: '5.2M YouTube views.',
+    note: 'The campaign gave Darlie strong exposure while keeping the original Didi & Friends song format and audience trust at the centre.'
+  },
+  'Konsert Hora Horey': {
+    category: 'Feature film',
+    summary: 'Led post-production delivery for an 82-minute Didi & Friends feature film, from edit coordination through final mastering and release-ready assets.',
+    role: 'Post-Production Manager',
+    facts: [['Format', '82-minute feature film'], ['Result', 'MYR 2.7M+ box office']],
+    challenge: 'My first feature-length project meant learning how to manage a much longer and more technically demanding delivery process than short-form content—while protecting cinematic quality across every final stage.',
+    led: 'Managed the end-to-end post-production pipeline; coordinated editors, colourists, and sound designers; kept work moving toward key delivery dates; and prepared final masters for multiple distribution platforms.',
+    context: 'A 2018 feature-film post-production workflow involving editorial, colour, sound, mastering, festival submission, and theatrical-release requirements.',
+    deliverables: 'Final edit coordination, colour and sound handover, final mastering, festival-submission materials, theatrical delivery, and multi-platform release assets.',
+    outcome: 'Cinema-ready delivery for an 82-minute feature.',
+    note: 'Delivered on time for festival submission and theatrical release. The Didi & Friends feature film achieved more than MYR 2.7 million at the box office.'
+  },
+  'Didi & Friends × SSPN': {
+    category: 'Branded content',
+    summary: 'Reworked a time-sensitive production plan to secure FINAS approval and deliver a campaign film and TVC cutdown on time.',
+    role: 'Creative Producer',
+    facts: [['Scope', '3 min film + 15 sec TVC'], ['Value', 'MYR 200K campaign']],
+    challenge: 'The campaign was tied to a live event, leaving a tight three-month production window. Alongside the full three-minute collaboration video, we needed a 15-second TVC cutdown approved by FINAS—a process that could add around three weeks before launch.',
+    led: 'Managed client expectations, maintained clear communication across stakeholders, and helped reshape the workflow so TVC material was completed and submitted for approval first while production continued on the full campaign video.',
+    context: 'A MYR 200K collaboration delivered within three months, involving a three-minute campaign video, a 15-second TVC cutdown, FINAS approval, and a time-sensitive live-event launch.',
+    deliverables: 'Three-minute collaboration video, 15-second TVC cutdown, client communication and progress reporting, FINAS submission coordination, and delivery planning.',
+    outcome: 'FINAS approval and TVC release on schedule.',
+    note: 'The client was satisfied with progress and final delivery, while the full campaign remained on track.'
+  },
+  'Didi & Friends × Genki': {
+    category: 'Branded content',
+    summary: 'Supported an international brand collaboration from client communication through final edit, on-time delivery, and post-launch reporting.',
+    role: 'Creative Producer',
+    facts: [['Focus', 'Client + final edit'], ['Result', '937K views']],
+    challenge: 'The focus was on maintaining a smooth, reliable production process across an international brand partnership while keeping communication clear and delivery on schedule.',
+    led: 'Acted as the main contact between the client and internal creative team; managed updates and expectations; edited final video deliverables; supported production through completion; and monitored campaign performance after release.',
+    context: 'A 2021 international branded-content collaboration delivered across client, creative, and post-production teams.',
+    deliverables: 'Client communication, production support, final video editing, delivery coordination, and post-launch performance reporting.',
+    outcome: '937,000 views after release.',
+    note: 'The project strengthened my confidence in working with international brands and balancing client communication with practical creative delivery.'
+  },
+  'Sirah Nabawiyah': {
+    category: 'Original IP',
+    summary: 'Built a 2D animated series from the ground up, creating its production blueprint, visual direction, and repeatable workflow for Durioo+.',
+    role: 'Line Producer',
+    facts: [['Scope', 'Original 2D series'], ['Platform', 'Leading Durioo+ series']],
+    challenge: 'The project needed to evolve through audience feedback while maintaining a clear story formula, consistent visual direction, and an efficient production system for a new 2D animation pipeline.',
+    led: 'Managed the project from development through final delivery; created and documented the production blueprint, workflows, pipelines, and guidelines; defined the project look and feel; and continuously improved the process as new audience feedback emerged.',
+    context: 'A 2024 original 2D animated series developed from scratch for Durioo+. It became one of the platform’s leading Sirah animated series.',
+    deliverables: 'Project blueprint, 2D animation pipeline, production workflows and guidelines, visual direction, story-development support, and final episode delivery.',
+    outcome: 'A repeatable foundation for a new 2D series.',
+    note: 'Developed from scratch and refined through audience feedback to improve both production quality and efficiency.'
+  }
+};
+
+const featuredNames = ['A Night With Aina Abdul 3.0', 'Little Ammar', 'Didi & Friends × Darlie'];
+const moreNames = ['Konsert Hora Horey', 'Didi & Friends × SSPN', 'Didi & Friends × Genki', 'Sirah Nabawiyah'];
+const galleryData = window.portfolioGalleryData || {};
+
+const dialog = document.querySelector('#project-dialog');
+const dialogMedia = document.querySelector('#dialog-media');
+const dialogImage = document.querySelector('#dialog-image');
+const dialogTitle = document.querySelector('#dialog-title');
+const galleryTrack = document.querySelector('#gallery-track');
+const galleryCount = document.querySelector('#gallery-count');
+const mediaCount = document.querySelector('#media-count');
+let activeProject = null;
+let galleryIndex = 0;
+
+function firstImage(projectName) {
+  return galleryData[projectName]?.items?.find((item) => item.type === 'image');
+}
+
+function renderCards(names, target) {
+  target.innerHTML = names.map((name) => {
+    const project = projectData[name];
+    const visual = firstImage(name);
+    return `<button class="project-card reveal" type="button" data-project="${name}"><span class="project-card-inner"><img src="${visual?.src || ''}" alt="${visual?.alt || name}"><span class="project-card-content"><span class="project-type">${project.category}</span><strong class="project-card-title">${name}</strong><span class="project-card-summary">${project.summary}</span></span><span class="project-action">View work ↗</span></span></button>`;
+  }).join('');
+}
+
+function setDialogCount() {
+  const total = activeProject?.items?.length || 0;
+  const label = `${String(galleryIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+  galleryCount.textContent = label;
+  mediaCount.textContent = label;
+}
+
+function selectGalleryItem(index) {
+  const items = activeProject?.items || [];
+  if (!items.length) return;
+  galleryIndex = (index + items.length) % items.length;
+  const item = items[galleryIndex];
+  galleryTrack.querySelectorAll('.gallery-item').forEach((button, position) => {
+    button.classList.toggle('selected', position === galleryIndex);
+  });
+  dialogMedia.querySelector('iframe')?.remove();
+  dialogMedia.classList.remove('playing');
+  if (item.type === 'video') {
+    dialogMedia.classList.add('playing');
+    dialogMedia.insertAdjacentHTML('beforeend', `<iframe title="${dialogTitle.textContent} trailer" src="https://www.youtube-nocookie.com/embed/${item.youtubeId}?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`);
+  } else {
+    dialogImage.src = item.src;
+    dialogImage.alt = item.alt;
+  }
+  setDialogCount();
+}
+
+function openProject(name) {
+  const project = projectData[name];
+  const gallery = galleryData[name];
+  if (!project || !gallery) return;
+  activeProject = gallery;
+  galleryIndex = 0;
+  document.querySelector('#dialog-type').textContent = `${project.category} · Project story`;
+  dialogTitle.textContent = name;
+  document.querySelector('#dialog-outcome').textContent = project.outcome;
+  document.querySelector('#dialog-note').textContent = project.note;
+  document.querySelector('#fact-grid').innerHTML = [['Role', project.role], ...project.facts].map(([label, value]) => `<article><span>${label}</span><strong>${value}</strong></article>`).join('');
+  document.querySelector('#detail-grid').innerHTML = [
+    ['The challenge', project.challenge, ''],
+    ['What I led', project.led, ''],
+    ['Production context', project.context, 'wide'],
+    ['Deliverables', project.deliverables, 'wide']
+  ].map(([title, body, width]) => `<article class="${width}"><h3>${title}</h3><p>${body}</p></article>`).join('');
+  galleryTrack.innerHTML = gallery.items.map((item, index) => {
+    const image = item.type === 'video' ? `https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg` : item.src;
+    return `<button type="button" class="gallery-item ${item.type === 'video' ? 'video' : ''}" data-gallery-index="${index}" aria-label="${item.alt}"><img src="${image}" alt="${item.alt}"></button>`;
+  }).join('');
+  galleryTrack.querySelectorAll('.gallery-item').forEach((button) => button.addEventListener('click', () => selectGalleryItem(Number(button.dataset.galleryIndex))));
+  dialog.showModal();
+  document.body.classList.add('dialog-open');
+  selectGalleryItem(0);
+}
+
+function closeProject() {
+  dialog.close();
+}
+
+renderCards(featuredNames, document.querySelector('#feature-projects'));
+renderCards(moreNames, document.querySelector('#more-projects'));
+document.querySelectorAll('[data-project]').forEach((card) => card.addEventListener('click', () => openProject(card.dataset.project)));
+
+const toggle = document.querySelector('#library-toggle');
+const moreProjects = document.querySelector('#more-projects');
+toggle.addEventListener('click', () => {
+  const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+  toggle.setAttribute('aria-expanded', String(!isOpen));
+  toggle.innerHTML = isOpen ? 'Browse all projects (4) <span>↓</span>' : 'Hide project library <span>↑</span>';
+  moreProjects.hidden = isOpen;
+});
+
+document.querySelector('#dialog-close').addEventListener('click', closeProject);
+dialog.addEventListener('close', () => {
+  document.body.classList.remove('dialog-open');
+  dialogMedia.querySelector('iframe')?.remove();
+  dialogMedia.classList.remove('playing');
+});
+document.querySelector('#media-previous').addEventListener('click', () => selectGalleryItem(galleryIndex - 1));
+document.querySelector('#media-next').addEventListener('click', () => selectGalleryItem(galleryIndex + 1));
+
+const lightbox = document.querySelector('#image-lightbox');
+document.querySelector('#dialog-expand').addEventListener('click', () => {
+  if (dialogMedia.classList.contains('playing')) return;
+  const image = lightbox.querySelector('img');
+  image.src = dialogImage.src;
+  image.alt = dialogImage.alt;
+  lightbox.hidden = false;
+});
+lightbox.querySelector('button').addEventListener('click', () => { lightbox.hidden = true; });
+lightbox.addEventListener('click', (event) => { if (event.target === lightbox) lightbox.hidden = true; });
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -35px' });
+document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
