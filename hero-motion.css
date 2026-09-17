@@ -1,0 +1,126 @@
+/* Hero personality: intentionally separate from the core layout rules. */
+@keyframes portrait-float {
+  0%, 100% { transform: translateY(0) rotate(0.001deg); }
+  50% { transform: translateY(-10px) rotate(0.001deg); }
+}
+
+@keyframes stat-drift-left {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-5px, -7px); }
+}
+
+@keyframes stat-drift-right {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(5px, -7px); }
+}
+
+@keyframes stat-drift-up {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(6px, 6px); }
+}
+
+@media (min-width: 1050px) {
+  .hero {
+    grid-template-columns: minmax(360px, .72fr) minmax(520px, 1.28fr);
+    gap: 7vw;
+    min-height: 700px;
+  }
+
+  .portrait-card {
+    width: min(620px, 100%);
+    min-height: 600px;
+    justify-self: end;
+    border-width: 5px;
+    border-radius: 38px;
+    box-shadow: 0 30px 65px rgba(39, 59, 96, .25);
+    animation: portrait-float 7s ease-in-out infinite;
+  }
+
+  .portrait-card > img {
+    height: 600px;
+    border-radius: 32px;
+  }
+
+  .portrait-stat {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    column-gap: 14px;
+    align-items: center;
+    min-width: 255px;
+    padding: 20px 24px;
+    border-radius: 25px;
+    box-shadow: 0 18px 40px rgba(35, 57, 91, .20);
+  }
+
+  .portrait-stat::before {
+    display: grid;
+    grid-row: span 2;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    font-size: 27px;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .portrait-stat strong {
+    font-size: 34px;
+    line-height: .95;
+  }
+
+  .portrait-stat span {
+    margin-top: 4px;
+    font-size: 18px;
+    line-height: 1.1;
+  }
+
+  .portrait-stat-views { top: 88px; left: -205px; animation: stat-drift-left 6s ease-in-out infinite; }
+  .portrait-stat-years { top: 60px; right: -150px; animation: stat-drift-right 6.5s ease-in-out infinite .6s; }
+  .portrait-stat-role { right: -142px; bottom: 62px; animation: stat-drift-up 6.2s ease-in-out infinite 1s; }
+  .portrait-stat-views::before { background: #e8f0ff; color: #2f6be7; content: '◉'; }
+  .portrait-stat-years::before { background: #fff4d5; color: #d49a00; content: '☆'; }
+  .portrait-stat-role::before { background: #e8f0ff; color: #2f6be7; content: '↯'; }
+}
+
+/* Keep the floating cards within reach on mid-sized laptops. */
+@media (min-width: 901px) and (max-width: 1049px) {
+  .portrait-stat-views { left: -75px; }
+  .portrait-stat-years { right: -55px; }
+  .portrait-stat-role { right: -55px; }
+}
+
+@media (min-width: 1050px) and (max-width: 1390px) {
+  .portrait-stat-views { left: -70px; }
+  .portrait-stat-years { right: -70px; }
+  .portrait-stat-role { right: -62px; }
+}
+
+/* One arrow treatment across links, buttons, cards and controls. */
+.arrow {
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1em;
+  font-weight: 900;
+  line-height: 1;
+  -webkit-text-stroke: .45px currentColor;
+  transform: translateY(-.03em) scale(1.08);
+}
+
+.dialog-media-controls button {
+  font-weight: 900;
+  -webkit-text-stroke: .45px currentColor;
+}
+
+@media (max-width: 620px) {
+  .portrait-stat::before { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-card,
+  .portrait-stat-views,
+  .portrait-stat-years,
+  .portrait-stat-role {
+    animation: none;
+  }
+}
