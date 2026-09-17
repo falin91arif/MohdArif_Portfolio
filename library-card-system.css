@@ -1,0 +1,118 @@
+/* More projects uses the same visual system as the selected-work cards. */
+.more-work {
+  padding-top: 0 !important;
+}
+
+.more-work .project-library-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 46px;
+  margin: 8px auto 30px !important;
+  padding: 0 4px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #2f6be7 !important;
+  font: 700 var(--type-action, 14px) / 1 Arial, Helvetica, sans-serif !important;
+  letter-spacing: 0 !important;
+}
+
+.more-work .project-library-toggle::before,
+.more-work .project-library-toggle::after {
+  content: '' !important;
+  width: 38px;
+  height: 1px;
+  margin: 0 12px;
+  background: #cfdcf3;
+}
+
+.more-work .project-library-toggle:hover {
+  color: #174fae !important;
+  transform: none !important;
+}
+
+.archive-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 28px !important;
+}
+
+.archive-card.story {
+  min-height: 470px !important;
+  overflow: hidden;
+  border: 1px solid #e6ebf3 !important;
+  border-radius: 26px !important;
+  background: #fff !important;
+  box-shadow: 0 15px 35px rgba(29, 50, 83, 0.07) !important;
+  color: #12151c !important;
+  text-align: left;
+}
+
+.archive-card.story:hover {
+  transform: translateY(-7px) !important;
+  border-color: #d4def0 !important;
+  box-shadow: 0 21px 42px rgba(29, 50, 83, 0.12) !important;
+}
+
+.archive-card.story img {
+  display: block;
+  width: 100%;
+  height: 214px !important;
+  object-fit: cover;
+}
+
+.archive-card.story div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 25px 26px 0 !important;
+}
+
+.archive-card.story span {
+  margin-bottom: 13px;
+  color: #2f6be7;
+  font: 700 var(--type-meta, 12px) / 1.15 Arial, Helvetica, sans-serif;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.archive-card.story h3 {
+  margin: 0;
+  color: #12151c !important;
+  font: 700 clamp(24px, 1.65vw, 30px) / 1.08 Arial, Helvetica, sans-serif !important;
+  letter-spacing: -0.045em !important;
+}
+
+.archive-card.story p {
+  margin: 14px 0 0;
+  color: #647187 !important;
+  font: 400 var(--type-summary, 16px) / 1.5 Arial, Helvetica, sans-serif !important;
+}
+
+body .more-work .archive-grid .archive-card.story::after {
+  content: 'View work ↗' !important;
+  display: block;
+  background: none !important;
+  padding: 0 26px 25px !important;
+  color: #2f6be7;
+  font: 700 var(--type-action, 14px) / 1 Arial, Helvetica, sans-serif !important;
+  letter-spacing: -0.02em;
+}
+
+body .more-work .archive-grid .archive-card.story::before {
+  content: none !important;
+}
+
+@media (max-width: 900px) {
+  .archive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+
+@media (max-width: 620px) {
+  .archive-grid { grid-template-columns: 1fr !important; gap: 18px !important; }
+  .archive-card.story { min-height: 430px !important; border-radius: 22px !important; }
+  .archive-card.story img { height: 205px !important; }
+  .archive-card.story div { padding: 22px 22px 0 !important; }
+  .archive-card.story::after { padding: 0 22px 22px !important; }
+}
