@@ -136,7 +136,7 @@ function openImage(item) {
   const image = lightbox.querySelector('img');
   image.src = item.src;
   image.alt = item.alt;
-  lightbox.hidden = false;
+  if (!lightbox.open) lightbox.showModal();
 }
 
 function openProject(name) {
@@ -196,8 +196,8 @@ dialog.addEventListener('close', () => {
 document.querySelector('#dialog-close-cinema').addEventListener('click', closeCinema);
 
 const lightbox = document.querySelector('#image-lightbox');
-lightbox.querySelector('button').addEventListener('click', () => { lightbox.hidden = true; });
-lightbox.addEventListener('click', (event) => { if (event.target === lightbox) lightbox.hidden = true; });
+lightbox.querySelector('button').addEventListener('click', () => { lightbox.close(); });
+lightbox.addEventListener('click', (event) => { if (event.target === lightbox) lightbox.close(); });
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

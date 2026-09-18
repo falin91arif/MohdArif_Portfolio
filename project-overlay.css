@@ -54,6 +54,13 @@
 .dialog-cinema #dialog-video-player { display: grid; height: calc(100% - 58px); place-items: center; border-radius: 20px; overflow: hidden; background: #000; }
 .dialog-cinema iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; }
 
+/* A native dialog places the expanded visual above the project dialog's top layer. */
+.image-lightbox { width: 100vw; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 30px; border: 0; background: rgba(7, 17, 38, .94); }
+.image-lightbox:not([open]) { display: none; }
+.image-lightbox::backdrop { background: transparent; }
+.image-lightbox img { display: block; width: auto; max-width: 92vw; height: auto; max-height: 88dvh; margin: auto; object-fit: contain; }
+.image-lightbox button { position: fixed; z-index: 1; top: 22px; right: 22px; }
+
 @media (max-width: 900px) {
   .project-dialog { height: calc(100dvh - 16px); }
   .dialog-split-layout { display: flex; flex-direction: column; height: calc(100% - 67px); overflow-y: auto; }
