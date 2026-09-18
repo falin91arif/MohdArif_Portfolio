@@ -46,6 +46,9 @@ window.portfolioGalleryData = {
   'Konsert Hora Horey': {
     items: [
       { type: 'image', src: '/assets/siti_1779598647918-D5xZrs1E.png', alt: 'Konsert Hora Horey visual' },
+      { type: 'image', src: '/assets/Konsert Hora Horey/Poster vertical.jpeg', alt: 'Poster Movie' },
+      { type: 'image', src: '/assets/Konsert Hora Horey/Tomok.jpeg', alt: 'Tomok' },
+      { type: 'image', src: '/assets/Konsert Hora Horey/Scene.jpg', alt: 'Didi Nana Jojo' },
       { type: 'video', youtubeId: 'I8d-tjcRXtM', alt: 'Watch the Konsert Hora Horey trailer' }
     ]
   },
