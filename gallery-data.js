@@ -38,8 +38,8 @@ window.portfolioGalleryData = {
   'Didi & Friends × Darlie': {
     items: [
       { type: 'image', src: '/assets/Darlie_1779599514492-BFUlTjSE.jpg', alt: 'Didi & Friends × Darlie campaign visual' },
-      { type: 'image', src: '/assets/Darlie Social Media.jpg', alt: 'Darlie Contest' },
-      { type: 'image', src: '/assets/Darlie Lirik.jpg', alt: 'Darlie Lirik' },
+      { type: 'image', src: '/assets/Darlie Social Media.jpeg', alt: 'Darlie Contest' },
+      { type: 'image', src: '/assets/Darlie Lirik.jpeg', alt: 'Darlie Lirik' },
       { type: 'video', youtubeId: 'yawTjEBhQFU', alt: 'Watch the Darlie campaign video' }
     ]
   },
