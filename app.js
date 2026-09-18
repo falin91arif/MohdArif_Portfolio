@@ -21,7 +21,7 @@ const projectData = {
     category: 'Original IP',
     summary: 'Built a nursery-rhyme IP for ages 0–5 from early development through scalable production.',
     role: 'Line Producer',
-    facts: [['Budget', 'MYR 1M / 4 seasons']],
+    facts: [['Budget', 'MYR 1M+ / 4 seasons']],
     challenge: 'Build a children’s IP from scratch while making clear production decisions that protected its long-term quality and avoided endless refinement.',
     led: 'As Line Producer, I managed end-to-end production: aligning the creative direction, team, vendors, schedule, and delivery from development through final episode production.',
     context: 'Little Ammar launched on 18 February 2022 for children aged 0–5. Each three-minute nursery-rhyme episode has an approximately six-month production cycle with a core team of around 10 people and external vendors.',
@@ -31,7 +31,7 @@ const projectData = {
   },
   'Didi & Friends × Darlie': {
     category: 'Branded content',
-    summary: 'Led a brand collaboration that reached 5.2M YouTube views.',
+    summary: 'Led a brand collaboration that reached 5.2M+ YouTube views.',
     role: 'Creative Producer',
     facts: [['Result', '5.2M YouTube views']],
     challenge: 'Create a branded Didi & Friends song that entertained first while giving Darlie meaningful visibility.',
@@ -43,15 +43,15 @@ const projectData = {
   },
   'Konsert Hora Horey': {
     category: 'Feature film',
-    summary: 'Led post-production delivery for an 82-minute Didi & Friends feature film, from edit coordination through final mastering and release-ready assets.',
+    summary: 'Led post-production delivery for Didi & Friends feature film, from edit coordination through final mastering.',
     role: 'Post-Production Manager',
     facts: [['Result', 'MYR 2.7M+ box office']],
-    challenge: 'My first feature-length project meant learning how to manage a much longer and more technically demanding delivery process than short-form content—while protecting cinematic quality across every final stage.',
-    led: 'Managed the end-to-end post-production pipeline; coordinated editors, colourists, and sound designers; kept work moving toward key delivery dates; and prepared final masters for multiple distribution platforms.',
+    challenge: 'My first feature-length project meant learning how to manage a much longer and more technically demanding delivery process than short-form content.',
+    led: 'Managed the post-production pipeline; coordinated editors and colourists; kept work moving toward key delivery dates; and prepared final masters.',
     context: 'A 2018 feature-film post-production workflow involving editorial, colour, sound, mastering, festival submission, and theatrical-release requirements.',
-    deliverables: 'Final edit coordination, colour and sound handover, final mastering, festival-submission materials, theatrical delivery, and multi-platform release assets.',
+    deliverables: 'Final edit coordination, colour and sound handover, final mastering, theatrical delivery, and multi-platform release assets.',
     outcome: 'Cinema-ready delivery for an 82-minute feature.',
-    note: 'Delivered on time for festival submission and theatrical release. The Didi & Friends feature film achieved more than MYR 2.7 million at the box office.'
+    note: 'Delivered on time for theatrical release. The Didi & Friends feature film achieved more than MYR 2.7 million at the box office.'
   },
   'Didi & Friends × SSPN': {
     category: 'Branded content',
