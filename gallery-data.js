@@ -29,7 +29,7 @@ window.portfolioGalleryData = {
       { type: 'image', src: '/assets/ammar/Little Ammar S02E13 EN Potty Mission.jpg', alt: 'Potty Mission Episode' },
       { type: 'image', src: '/assets/ammar/rapbit v2.jpg', alt: 'Rapbit Concept' },
       { type: 'image', src: '/assets/ammar/Little Ammar S02E11 EN Fruit Rangers .jpg', alt: 'Fruit Rangers Episode' },
-      { type: 'image', src: '/assets/ammar/Screenshot 2026-09-18 at 8.43.57 PM', alt: '3D Model Turn Around' },
+      { type: 'image', src: '/assets/ammar/Screenshot 2026-09-18 at 8.43.57 PM.png', alt: '3D Model Turn Around' },
       { type: 'image', src: '/assets/ammar/Little Ammar S02E09 EN Planets.jpg', alt: 'Planets Episode' },
       { type: 'image', src: '/assets/ammar/Little Ammar SPECIAL02 EN Eid Mubarak.jpeg', alt: 'Eid Mubarak Episode' },
       { type: 'video', youtubeId: 'PGPhWPqjm6o', alt: 'Watch the Little Ammar trailer' }
