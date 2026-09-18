@@ -4,24 +4,24 @@ const projectData = {
     summary: 'Designed a unified visual campaign for Aina Abdul’s sold-out Axiata Arena concert.',
     role: 'Graphic Designer',
     facts: [['Scope', '5 merchandise products'], ['Partners', 'Artist team + Director']],
-    quickFacts: [['Role', 'Lead Graphic Designer'], ['Collaborators', 'Concert Director & Artist Team'], ['Key touchpoints', 'Main key visual, billboards, social campaign, 5× merch products, venue signage']],
-    challenge: 'Create a unified visual language for a sold-out arena concert—one that felt memorable across every audience touchpoint.',
+    quickFacts: [['Role', 'Lead Graphic Designer'], ['Collaborators', 'Concert Director & Artist Team'], ['Key touchpoints', 'Main key visual, billboards, social campaign, merch products, venue signage']],
+    challenge: 'Create a unified visual language for a sold-out arena concert—one that felt memorable across every platform and experiances.',
     led: 'Engaged by the Concert Director as Graphic Designer. I developed the main poster, social-media campaign, billboard and print advertising, five merchandise products, and on-site event materials.',
     context: 'A Night With Aina Abdul 3.0 took place on 18 November 2023 at Axiata Arena, Bukit Jalil. I worked with the Artist Team, Concert Director, Producer, and merchandise vendor. My scope was visual design; I was not responsible for event budget or scheduling.',
     deliverables: 'Main key visual, social-media assets, physical print materials, billboard advertising, five merchandise products, and venue materials.',
-    outcome: 'One visual world for a sold-out arena concert.',
+    outcome: 'Memoriable sold-out arena concert.',
     note: 'Around 10,000 attendees from Malaysia, Singapore, and Brunei experienced the concert on 18 November 2023.',
     execution: [
       ['Core visual identity', 'Developed the central key art that set the aesthetic tone for every promotional phase.'],
       ['Marketing rollout', 'Designed high-visibility digital ads, highway billboards, and social campaign media.'],
-      ['Merchandise & on-site', 'Designed five official merchandise items and stage and venue graphics seen by 10,000 attendees.']
+      ['Merchandise & on-site', 'Designed official merchandise items and stage and venue graphics seen by 10,000 attendees.']
     ]
   },
   'Little Ammar': {
     category: 'Original IP',
-    summary: 'Built a nursery-rhyme IP for ages 0–5 from early development through scalable production.',
+    summary: 'Built a nursery-rhyme IP from early development through scalable production.',
     role: 'Line Producer',
-    facts: [['Scale', '100+ episodes'], ['Budget', 'MYR 1M / 4 seasons']],
+    facts: [['Scale', '100+ episodes'], ['Budget', 'MYR 1 Million / 4 seasons']],
     challenge: 'Build a children’s IP from scratch while making clear production decisions that protected its long-term quality and avoided endless refinement.',
     led: 'As Line Producer, I managed end-to-end production: aligning the creative direction, team, vendors, schedule, and delivery from development through final episode production.',
     context: 'Little Ammar launched on 18 February 2022 for children aged 0–5. Each three-minute nursery-rhyme episode has an approximately six-month production cycle with a core team of around 10 people and external vendors.',
@@ -31,14 +31,14 @@ const projectData = {
   },
   'Didi & Friends × Darlie': {
     category: 'Branded content',
-    summary: 'Led a brand collaboration that reached 5.2M YouTube views without compromising the Didi & Friends identity.',
+    summary: 'Led a brand collaboration that reached 5.2 Million YouTube views without compromising the Didi & Friends identity.',
     role: 'Creative Producer',
-    facts: [['Delivery', '4 months'], ['Result', '5.2M YouTube views']],
+    facts: [['Delivery', '4 months'], ['Result', '5.2 Million YouTube views']],
     challenge: 'Create a branded Didi & Friends song that entertained first—not a hard-sell advertisement—while giving Darlie meaningful visibility.',
     led: 'As Creative Producer, I monitored the full production, presented concepts to the client, led the creative team, managed revisions and approvals, and tracked performance after launch.',
     context: 'A four-month production involving Darlie, Digital Durian, the animation team, agency partners, and talent. TVC approval with government bodies added complexity and was successfully resolved.',
     deliverables: 'One original Malay-language Didi & Friends song, delivered in formats for YouTube, social platforms, and TVC—from 15-second cuts to a three-minute video.',
-    outcome: '5.2M YouTube views.',
+    outcome: '5.2 Million YouTube views.',
     note: 'The campaign gave Darlie strong exposure while keeping the original Didi & Friends song format and audience trust at the centre.'
   },
   'Konsert Hora Horey': {
