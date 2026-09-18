@@ -116,15 +116,16 @@
             <section class="dialog-execution"><p>Creative execution</p><ol id="execution-list"></ol></section>
           </aside>
           <section class="dialog-gallery-panel" aria-label="Project gallery">
-            <header class="dialog-gallery-header"><div><p>Visual gallery</p><span id="gallery-count">01 / 01</span></div><div class="dialog-media-controls"><button type="button" id="media-previous" aria-label="Previous gallery item">←</button><button type="button" id="media-next" aria-label="Next gallery item">→</button></div></header>
-            <div class="dialog-media" id="dialog-media">
-              <img id="dialog-image" alt="">
-              <div class="dialog-media-caption"><p id="dialog-media-label"></p><span id="dialog-media-kind"></span></div>
-              <button class="dialog-play-button" id="dialog-play" type="button" hidden>▶ <span>Play trailer</span></button>
-              <button class="dialog-expand" id="dialog-expand" type="button" aria-label="View image full size">⛶</button>
-            </div>
+            <header class="dialog-gallery-header"><div><p>Visual gallery</p><span id="gallery-count">0 visuals</span></div><span class="dialog-gallery-cue">Scroll gallery <span class="arrow">↓</span></span></header>
+            <button class="dialog-video-feature" id="dialog-video-feature" type="button" hidden>
+              <img id="dialog-video-thumbnail" alt="">
+              <span class="dialog-video-feature-overlay"><span class="dialog-video-play">▶</span><span><strong>Play trailer</strong><small>Opens cinema view</small></span></span>
+            </button>
             <div class="dialog-gallery" id="gallery-track"></div>
-            <p class="dialog-gallery-hint">Use the arrows or choose a thumbnail to move through the gallery. Videos never play automatically.</p>
+            <section class="dialog-cinema" id="dialog-cinema" aria-label="Project trailer player" hidden>
+              <header><p id="dialog-cinema-title">Project trailer</p><button id="dialog-close-cinema" type="button">Back to gallery <span class="arrow">←</span></button></header>
+              <div id="dialog-video-player"></div>
+            </section>
           </section>
         </div>
       </article>

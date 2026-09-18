@@ -96,16 +96,14 @@ const moreNames = ['Konsert Hora Horey', 'Didi & Friends × SSPN', 'Didi & Frien
 const galleryData = window.portfolioGalleryData || {};
 
 const dialog = document.querySelector('#project-dialog');
-const dialogMedia = document.querySelector('#dialog-media');
-const dialogImage = document.querySelector('#dialog-image');
 const dialogTitle = document.querySelector('#dialog-title');
 const galleryTrack = document.querySelector('#gallery-track');
 const galleryCount = document.querySelector('#gallery-count');
-const dialogMediaLabel = document.querySelector('#dialog-media-label');
-const dialogMediaKind = document.querySelector('#dialog-media-kind');
-const dialogPlay = document.querySelector('#dialog-play');
-let activeProject = null;
-let galleryIndex = 0;
+const dialogVideoFeature = document.querySelector('#dialog-video-feature');
+const dialogVideoThumbnail = document.querySelector('#dialog-video-thumbnail');
+const dialogCinema = document.querySelector('#dialog-cinema');
+const dialogCinemaTitle = document.querySelector('#dialog-cinema-title');
+const dialogVideoPlayer = document.querySelector('#dialog-video-player');
 
 function firstImage(projectName) {
   return galleryData[projectName]?.items?.find((item) => item.type === 'image');
@@ -119,45 +117,32 @@ function renderCards(names, target) {
   }).join('');
 }
 
-function setDialogCount() {
-  const total = activeProject?.items?.length || 0;
-  const label = `${String(galleryIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
-  galleryCount.textContent = label;
+function videoThumbnail(item) {
+  return `https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg`;
 }
 
-function updateImageFit() {
-  const isPortrait = dialogImage.naturalHeight > dialogImage.naturalWidth;
-  dialogMedia.classList.toggle('is-contain', isPortrait);
+function closeCinema() {
+  dialogCinema.hidden = true;
+  dialogVideoPlayer.innerHTML = '';
 }
 
-function selectGalleryItem(index) {
-  const items = activeProject?.items || [];
-  if (!items.length) return;
-  galleryIndex = (index + items.length) % items.length;
-  const item = items[galleryIndex];
-  galleryTrack.querySelectorAll('.gallery-item').forEach((button, position) => {
-    button.classList.toggle('selected', position === galleryIndex);
-  });
-  dialogMedia.querySelector('iframe')?.remove();
-  dialogMedia.classList.remove('playing');
-  dialogMedia.classList.toggle('is-video', item.type === 'video');
-  dialogImage.hidden = false;
-  dialogImage.src = item.type === 'video' ? `https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg` : item.src;
-  dialogImage.alt = item.alt;
-  dialogImage.onload = updateImageFit;
-  if (dialogImage.complete) updateImageFit();
-  dialogMediaLabel.textContent = item.type === 'video' ? 'Concert trailer' : item.alt;
-  dialogMediaKind.textContent = item.type === 'video' ? 'Video · click Play' : 'Image';
-  dialogPlay.hidden = item.type !== 'video';
-  setDialogCount();
+function openCinema(item) {
+  dialogCinemaTitle.textContent = `${dialogTitle.textContent} trailer`;
+  dialogCinema.hidden = false;
+  dialogVideoPlayer.innerHTML = `<iframe title="${dialogTitle.textContent} trailer" src="https://www.youtube-nocookie.com/embed/${item.youtubeId}?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+}
+
+function openImage(item) {
+  const image = lightbox.querySelector('img');
+  image.src = item.src;
+  image.alt = item.alt;
+  lightbox.hidden = false;
 }
 
 function openProject(name) {
   const project = projectData[name];
   const gallery = galleryData[name];
   if (!project || !gallery) return;
-  activeProject = gallery;
-  galleryIndex = 0;
   document.querySelector('#dialog-type').textContent = `${project.category} · Project story`;
   dialogTitle.textContent = name;
   document.querySelector('#dialog-subtitle').textContent = project.summary;
@@ -170,14 +155,20 @@ function openProject(name) {
   ];
   document.querySelector('#fact-grid').innerHTML = quickFacts.map(([label, value]) => `<article><span>${label}</span><strong>${value}</strong></article>`).join('');
   document.querySelector('#execution-list').innerHTML = execution.map(([title, body], index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><div><h3>${title}</h3><p>${body}</p></div></li>`).join('');
-  galleryTrack.innerHTML = gallery.items.map((item, index) => {
-    const image = item.type === 'video' ? `https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg` : item.src;
-    return `<button type="button" class="gallery-item ${item.type === 'video' ? 'video' : ''}" data-gallery-index="${index}" aria-label="${item.alt}"><img src="${image}" alt="${item.alt}"><span>${item.type === 'video' ? '▶ ' : ''}${item.type === 'video' ? 'Concert trailer' : item.alt}</span></button>`;
-  }).join('');
-  galleryTrack.querySelectorAll('.gallery-item').forEach((button) => button.addEventListener('click', () => selectGalleryItem(Number(button.dataset.galleryIndex))));
+  const video = gallery.items.find((item) => item.type === 'video');
+  const images = gallery.items.filter((item) => item.type === 'image');
+  galleryCount.textContent = `${gallery.items.length} visual${gallery.items.length === 1 ? '' : 's'}`;
+  dialogVideoFeature.hidden = !video;
+  if (video) {
+    dialogVideoThumbnail.src = videoThumbnail(video);
+    dialogVideoThumbnail.alt = video.alt;
+    dialogVideoFeature.onclick = () => openCinema(video);
+  }
+  galleryTrack.innerHTML = images.map((item, index) => `<button type="button" class="gallery-item" data-gallery-index="${index}" aria-label="View ${item.alt}"><img src="${item.src}" alt="${item.alt}"><span>${item.alt}</span></button>`).join('');
+  galleryTrack.querySelectorAll('.gallery-item').forEach((button) => button.addEventListener('click', () => openImage(images[Number(button.dataset.galleryIndex)])));
+  closeCinema();
   dialog.showModal();
   document.body.classList.add('dialog-open');
-  selectGalleryItem(0);
 }
 
 function closeProject() {
@@ -200,29 +191,11 @@ toggle.addEventListener('click', () => {
 document.querySelector('#dialog-close').addEventListener('click', closeProject);
 dialog.addEventListener('close', () => {
   document.body.classList.remove('dialog-open');
-  dialogMedia.querySelector('iframe')?.remove();
-  dialogMedia.classList.remove('playing');
+  closeCinema();
 });
-document.querySelector('#media-previous').addEventListener('click', () => selectGalleryItem(galleryIndex - 1));
-document.querySelector('#media-next').addEventListener('click', () => selectGalleryItem(galleryIndex + 1));
-dialogImage.addEventListener('load', updateImageFit);
-dialogPlay.addEventListener('click', () => {
-  const item = activeProject?.items?.[galleryIndex];
-  if (!item || item.type !== 'video') return;
-  dialogImage.hidden = true;
-  dialogPlay.hidden = true;
-  dialogMedia.classList.add('playing');
-  dialogMedia.insertAdjacentHTML('beforeend', `<iframe title="${dialogTitle.textContent} trailer" src="https://www.youtube-nocookie.com/embed/${item.youtubeId}?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`);
-});
+document.querySelector('#dialog-close-cinema').addEventListener('click', closeCinema);
 
 const lightbox = document.querySelector('#image-lightbox');
-document.querySelector('#dialog-expand').addEventListener('click', () => {
-  if (dialogMedia.classList.contains('playing') || dialogMedia.classList.contains('is-video')) return;
-  const image = lightbox.querySelector('img');
-  image.src = dialogImage.src;
-  image.alt = dialogImage.alt;
-  lightbox.hidden = false;
-});
 lightbox.querySelector('button').addEventListener('click', () => { lightbox.hidden = true; });
 lightbox.addEventListener('click', (event) => { if (event.target === lightbox) lightbox.hidden = true; });
 
