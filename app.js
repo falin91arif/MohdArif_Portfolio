@@ -31,10 +31,10 @@ const projectData = {
   },
   'Didi & Friends × Darlie': {
     category: 'Branded content',
-    summary: 'Led a brand collaboration that reached 5.2M YouTube views without compromising the Didi & Friends identity.',
+    summary: 'Led a brand collaboration that reached 5.2M YouTube views.',
     role: 'Creative Producer',
     facts: [['Result', '5.2M YouTube views']],
-    challenge: 'Create a branded Didi & Friends song that entertained first—not a hard-sell advertisement—while giving Darlie meaningful visibility.',
+    challenge: 'Create a branded Didi & Friends song that entertained first while giving Darlie meaningful visibility.',
     led: 'As Creative Producer, I monitored the full production, presented concepts to the client, led the creative team, managed revisions and approvals, and tracked performance after launch.',
     context: 'A four-month production involving Darlie, Digital Durian, the animation team, agency partners, and talent. TVC approval with government bodies added complexity and was successfully resolved.',
     deliverables: 'One original Malay-language Didi & Friends song, delivered in formats for YouTube, social platforms, and TVC—from 15-second cuts to a three-minute video.',
