@@ -105,28 +105,28 @@
 
     <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
       <article>
-        <header class="dialog-topbar"><p id="dialog-type"></p><button id="dialog-close" type="button" aria-label="Close project">×</button></header>
-        <section class="dialog-media" id="dialog-media">
-          <img id="dialog-image" alt="">
-          <div class="dialog-gradient"></div>
-          <div class="dialog-title"><p>Feature project</p><h2 id="dialog-title"></h2></div>
-          <div class="dialog-media-controls"><button type="button" id="media-previous" aria-label="Previous gallery item">‹</button><span id="media-count">01 / 01</span><button type="button" id="media-next" aria-label="Next gallery item">›</button></div>
-          <button class="dialog-expand" id="dialog-expand" type="button" aria-label="View image full size">⛶</button>
-        </section>
-        <section class="dialog-gallery"><header><span>Visual gallery</span><span id="gallery-count">01 / 01</span></header><div id="gallery-track"></div></section>
-        <section class="dialog-summary">
-          <p class="dialog-subtitle" id="dialog-subtitle"></p>
-          <div class="fact-grid dialog-fact-grid" id="fact-grid"></div>
-        </section>
-        <section class="dialog-challenge">
-          <p>The challenge</p>
-          <blockquote id="dialog-challenge"></blockquote>
-        </section>
-        <section class="dialog-execution">
-          <header><p>Creative execution &amp; impact</p><span>03 focus areas</span></header>
-          <ol id="execution-list"></ol>
-        </section>
-        <footer class="dialog-outcome"><p>Outcome</p><strong id="dialog-outcome"></strong></footer>
+        <header class="dialog-topbar"><p>Feature project · Project story</p><button id="dialog-close" type="button" aria-label="Close project">×</button></header>
+        <div class="dialog-split-layout">
+          <aside class="dialog-project-details">
+            <p class="dialog-project-kicker" id="dialog-type"></p>
+            <h2 id="dialog-title"></h2>
+            <p class="dialog-subtitle" id="dialog-subtitle"></p>
+            <div class="fact-grid dialog-fact-grid" id="fact-grid"></div>
+            <section class="dialog-challenge"><p>The challenge</p><blockquote id="dialog-challenge"></blockquote></section>
+            <section class="dialog-execution"><p>Creative execution</p><ol id="execution-list"></ol></section>
+          </aside>
+          <section class="dialog-gallery-panel" aria-label="Project gallery">
+            <header class="dialog-gallery-header"><div><p>Visual gallery</p><span id="gallery-count">01 / 01</span></div><div class="dialog-media-controls"><button type="button" id="media-previous" aria-label="Previous gallery item">←</button><button type="button" id="media-next" aria-label="Next gallery item">→</button></div></header>
+            <div class="dialog-media" id="dialog-media">
+              <img id="dialog-image" alt="">
+              <div class="dialog-media-caption"><p id="dialog-media-label"></p><span id="dialog-media-kind"></span></div>
+              <button class="dialog-play-button" id="dialog-play" type="button" hidden>▶ <span>Play trailer</span></button>
+              <button class="dialog-expand" id="dialog-expand" type="button" aria-label="View image full size">⛶</button>
+            </div>
+            <div class="dialog-gallery" id="gallery-track"></div>
+            <p class="dialog-gallery-hint">Use the arrows or choose a thumbnail to move through the gallery. Videos never play automatically.</p>
+          </section>
+        </div>
       </article>
     </dialog>
     <div class="image-lightbox" id="image-lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt="Expanded project visual"></div>
