@@ -37,7 +37,7 @@ const projectData = {
     challenge: 'Create a branded Didi & Friends song that entertained first while giving Darlie meaningful visibility.',
     led: 'As Creative Producer, I monitored the full production, presented concepts to the client, led the creative team, managed revisions and approvals, and tracked performance after launch.',
     context: 'A four-month production involving Darlie, Digital Durian, the animation team, agency partners, and talent. TVC approval with government bodies added complexity and was successfully resolved.',
-    deliverables: 'One original Malay-language Didi & Friends song, delivered in formats for YouTube, social platforms, and TVC—from 15-second cuts to a three-minute video.',
+    deliverables: 'Delivered in formats for YouTube, social platforms, and TVC—from 15-second cuts to a three-minute video.',
     outcome: '5.2M YouTube views.',
     note: 'The campaign gave Darlie strong exposure while keeping the original Didi & Friends song format and audience trust at the centre.'
   },
