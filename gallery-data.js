@@ -55,6 +55,8 @@ window.portfolioGalleryData = {
   'Didi & Friends × SSPN': {
     items: [
       { type: 'image', src: '/assets/SSPN_1779599641704-3GvelWHY.jpg', alt: 'Didi & Friends × SSPN campaign visual' },
+      { type: 'image', src: '/assets/SSPN/Poster Social Media.jpg', alt: 'Poster' },
+      { type: 'image', src: '/assets/SSPN/Color Contest.jpeg', alt: 'SSPN Contest' },
       { type: 'video', youtubeId: '0Nzwnw4sLF8', alt: 'Watch the SSPN campaign video' }
     ]
   },
