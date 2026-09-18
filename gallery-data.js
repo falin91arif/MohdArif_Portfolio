@@ -16,7 +16,11 @@ window.portfolioGalleryData = {
     items: [
       { type: 'image', src: '/assets/Header_AIna_1779470603094-S4LNJfvN.png', alt: 'A Night With Aina Abdul 3.0 concert visual' },
       { type: 'video', youtubeId: '2iyb5nZwtAY', alt: 'Watch the Aina Abdul trailer' },
-      { type: 'image', src: '/assets/Billboard.jpg', alt: ' Bukit Bintang Billboard'}
+      { type: 'image', src: '/assets/Billboard.jpg', alt: 'Bukit Bintang Billboard'},
+      { type: 'image', src: '/assets/IMG_1215.jpg', alt: 'Bukit Bintang Billboard'},
+      { type: 'image', src: '/assets/IMG_1236.jpg', alt: 'Bukit Bintang Billboard'},
+      { type: 'image', src: '/assets/IMG_1240.jpg', alt: 'Bukit Bintang Billboard'},
+      { type: 'image', src: '/assets/IMG_1214.jpg', alt: 'Banner'}
     ]
   },
   'Little Ammar': {
