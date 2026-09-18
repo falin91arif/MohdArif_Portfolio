@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/components.css">
     <link rel="stylesheet" href="/hero-motion.css">
+    <link rel="stylesheet" href="/project-overlay.css">
   </head>
   <body>
     <header class="site-header">
@@ -45,7 +46,7 @@
       <section class="container impact-grid reveal" aria-label="Career highlights">
         <article><span aria-hidden="true">◉</span><strong>60M+</strong><p>Collective views</p></article>
         <article><span aria-hidden="true">☆</span><strong>8+</strong><p>Years in production</p></article>
-        <article><span aria-hidden="true">◈</span><strong>MYR 200K</strong><p>Budget managed</p></article>
+        <article><span aria-hidden="true">◈</span><strong>MYR 1M</strong><p>Budget managed</p></article>
         <article><span aria-hidden="true">✓</span><strong>80%+</strong><p>On-time delivery</p></article>
       </section>
 
@@ -113,11 +114,19 @@
           <button class="dialog-expand" id="dialog-expand" type="button" aria-label="View image full size">⛶</button>
         </section>
         <section class="dialog-gallery"><header><span>Visual gallery</span><span id="gallery-count">01 / 01</span></header><div id="gallery-track"></div></section>
-        <section class="dialog-content">
-          <div class="outcome-panel"><p>Outcome</p><h3 id="dialog-outcome"></h3><span id="dialog-note"></span></div>
-          <div class="fact-grid" id="fact-grid"></div>
-          <div class="detail-grid" id="detail-grid"></div>
+        <section class="dialog-summary">
+          <p class="dialog-subtitle" id="dialog-subtitle"></p>
+          <div class="fact-grid dialog-fact-grid" id="fact-grid"></div>
         </section>
+        <section class="dialog-challenge">
+          <p>The challenge</p>
+          <blockquote id="dialog-challenge"></blockquote>
+        </section>
+        <section class="dialog-execution">
+          <header><p>Creative execution &amp; impact</p><span>03 focus areas</span></header>
+          <ol id="execution-list"></ol>
+        </section>
+        <footer class="dialog-outcome"><p>Outcome</p><strong id="dialog-outcome"></strong></footer>
       </article>
     </dialog>
     <div class="image-lightbox" id="image-lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt="Expanded project visual"></div>

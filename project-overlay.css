@@ -1,0 +1,188 @@
+/* Simplified case-study overlay: visual first, concise supporting copy. */
+.project-dialog {
+  width: min(1040px, calc(100% - 32px));
+  border-radius: 28px;
+}
+
+.project-dialog .dialog-topbar {
+  min-height: 66px;
+  padding: 0 28px;
+}
+
+.project-dialog .dialog-media {
+  aspect-ratio: 16 / 8;
+}
+
+.project-dialog .dialog-title {
+  right: 48px;
+  bottom: 43px;
+  left: 48px;
+}
+
+.project-dialog .dialog-title h2 {
+  font-size: clamp(44px, 6vw, 72px);
+}
+
+.project-dialog .dialog-gallery {
+  padding: 20px 48px 0;
+}
+
+.project-dialog .dialog-gallery > div {
+  padding-bottom: 4px;
+}
+
+.project-dialog .gallery-item {
+  flex-basis: 150px;
+  width: 150px;
+  height: 80px;
+}
+
+.dialog-summary,
+.dialog-execution {
+  padding: 32px 48px 0;
+}
+
+.dialog-subtitle {
+  max-width: 790px;
+  margin: 0 0 30px;
+  color: #131a29;
+  font-size: clamp(23px, 2.7vw, 32px);
+  font-weight: 700;
+  letter-spacing: -.04em;
+  line-height: 1.2;
+}
+
+.project-dialog .dialog-fact-grid {
+  display: grid;
+  grid-template-columns: .8fr 1fr 1.6fr;
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid #e3eaf5;
+  border-bottom: 1px solid #e3eaf5;
+}
+
+.project-dialog .dialog-fact-grid article {
+  padding: 18px 22px 19px 0;
+  border: 0;
+  border-radius: 0;
+}
+
+.project-dialog .dialog-fact-grid article + article {
+  padding-left: 22px;
+  border-left: 1px solid #e3eaf5;
+}
+
+.project-dialog .dialog-fact-grid strong {
+  color: #131a29;
+  font-size: var(--body);
+}
+
+.dialog-challenge {
+  margin: 32px 48px 0;
+  padding: 0 0 33px;
+  border-bottom: 1px solid #e3eaf5;
+}
+
+.dialog-challenge > p,
+.dialog-execution header p,
+.dialog-outcome p {
+  margin: 0 0 12px;
+  color: var(--blue);
+  font-size: var(--label);
+  font-weight: 800;
+  letter-spacing: .065em;
+  text-transform: uppercase;
+}
+
+.dialog-challenge blockquote {
+  max-width: 870px;
+  margin: 0;
+  padding-left: 21px;
+  border-left: 4px solid var(--blue);
+  color: #131a29;
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 700;
+  letter-spacing: -.035em;
+  line-height: 1.28;
+}
+
+.dialog-execution {
+  padding-bottom: 43px;
+}
+
+.dialog-execution header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.dialog-execution header span {
+  color: #718096;
+  font-size: var(--body);
+}
+
+.dialog-execution ol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 13px;
+  padding: 0;
+  margin: 18px 0 0;
+  list-style: none;
+}
+
+.dialog-execution li {
+  min-height: 185px;
+  padding: 22px;
+  border: 1px solid #e3eaf5;
+  border-radius: 17px;
+  background: linear-gradient(145deg, #fff, #f5f8ff);
+}
+
+.dialog-execution li > span {
+  display: block;
+  margin-bottom: 30px;
+  color: var(--blue);
+  font-size: var(--label);
+  font-weight: 800;
+}
+
+.dialog-execution h3 {
+  margin: 0 0 9px;
+  color: #131a29;
+  font-size: 21px;
+  letter-spacing: -.035em;
+}
+
+.dialog-execution li p {
+  margin: 0;
+  color: #58677e;
+  font-size: var(--body);
+  line-height: 1.48;
+}
+
+.dialog-outcome {
+  padding: 27px 48px 31px;
+  background: #eaf2ff;
+  text-align: center;
+}
+
+.dialog-outcome p { margin-bottom: 8px; }
+.dialog-outcome strong { color: #131a29; font-size: clamp(25px, 3.2vw, 38px); letter-spacing: -.055em; line-height: 1.05; }
+
+@media (max-width: 620px) {
+  .project-dialog .dialog-topbar { padding: 0 16px; }
+  .project-dialog .dialog-media { aspect-ratio: 4 / 5; }
+  .project-dialog .dialog-title { right: 22px; bottom: 26px; left: 22px; }
+  .project-dialog .dialog-gallery,
+  .dialog-summary,
+  .dialog-execution { padding-right: 18px; padding-left: 18px; }
+  .dialog-challenge { margin-right: 18px; margin-left: 18px; }
+  .project-dialog .dialog-fact-grid,
+  .dialog-execution ol { grid-template-columns: 1fr; }
+  .project-dialog .dialog-fact-grid article + article { padding-left: 0; border-top: 1px solid #e3eaf5; border-left: 0; }
+  .project-dialog .dialog-fact-grid article { padding-right: 0; }
+  .dialog-execution li { min-height: 0; }
+  .dialog-execution li > span { margin-bottom: 22px; }
+  .dialog-outcome { padding-right: 18px; padding-left: 18px; }
+}

@@ -4,12 +4,18 @@ const projectData = {
     summary: 'Designed a unified visual campaign for Aina Abdul’s sold-out Axiata Arena concert.',
     role: 'Graphic Designer',
     facts: [['Scope', '5 merchandise products'], ['Partners', 'Artist team + Director']],
+    quickFacts: [['Role', 'Lead Graphic Designer'], ['Collaborators', 'Concert Director & Artist Team'], ['Key touchpoints', 'Main key visual, billboards, social campaign, 5× merch products, venue signage']],
     challenge: 'Create a unified visual language for a sold-out arena concert—one that felt memorable across every audience touchpoint.',
     led: 'Engaged by the Concert Director as Graphic Designer. I developed the main poster, social-media campaign, billboard and print advertising, five merchandise products, and on-site event materials.',
     context: 'A Night With Aina Abdul 3.0 took place on 18 November 2023 at Axiata Arena, Bukit Jalil. I worked with the Artist Team, Concert Director, Producer, and merchandise vendor. My scope was visual design; I was not responsible for event budget or scheduling.',
     deliverables: 'Main key visual, social-media assets, physical print materials, billboard advertising, five merchandise products, and venue materials.',
     outcome: 'One visual world for a sold-out arena concert.',
-    note: 'Around 10,000 attendees from Malaysia, Singapore, and Brunei experienced the concert on 18 November 2023.'
+    note: 'Around 10,000 attendees from Malaysia, Singapore, and Brunei experienced the concert on 18 November 2023.',
+    execution: [
+      ['Core visual identity', 'Developed the central key art that set the aesthetic tone for every promotional phase.'],
+      ['Marketing rollout', 'Designed high-visibility digital ads, highway billboards, and social campaign media.'],
+      ['Merchandise & on-site', 'Designed five official merchandise items and stage and venue graphics seen by 10,000 attendees.']
+    ]
   },
   'Little Ammar': {
     category: 'Original IP',
@@ -146,15 +152,17 @@ function openProject(name) {
   galleryIndex = 0;
   document.querySelector('#dialog-type').textContent = `${project.category} · Project story`;
   dialogTitle.textContent = name;
+  document.querySelector('#dialog-subtitle').textContent = project.summary;
+  document.querySelector('#dialog-challenge').textContent = project.challenge;
   document.querySelector('#dialog-outcome').textContent = project.outcome;
-  document.querySelector('#dialog-note').textContent = project.note;
-  document.querySelector('#fact-grid').innerHTML = [['Role', project.role], ...project.facts].map(([label, value]) => `<article><span>${label}</span><strong>${value}</strong></article>`).join('');
-  document.querySelector('#detail-grid').innerHTML = [
-    ['The challenge', project.challenge, ''],
-    ['What I led', project.led, ''],
-    ['Production context', project.context, 'wide'],
-    ['Deliverables', project.deliverables, 'wide']
-  ].map(([title, body, width]) => `<article class="${width}"><h3>${title}</h3><p>${body}</p></article>`).join('');
+  const quickFacts = project.quickFacts || [['Role', project.role], ...project.facts];
+  const execution = project.execution || [
+    ['Production leadership', project.led],
+    ['Delivery scope', project.deliverables],
+    ['Impact', project.note]
+  ];
+  document.querySelector('#fact-grid').innerHTML = quickFacts.map(([label, value]) => `<article><span>${label}</span><strong>${value}</strong></article>`).join('');
+  document.querySelector('#execution-list').innerHTML = execution.map(([title, body], index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><div><h3>${title}</h3><p>${body}</p></div></li>`).join('');
   galleryTrack.innerHTML = gallery.items.map((item, index) => {
     const image = item.type === 'video' ? `https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg` : item.src;
     return `<button type="button" class="gallery-item ${item.type === 'video' ? 'video' : ''}" data-gallery-index="${index}" aria-label="${item.alt}"><img src="${image}" alt="${item.alt}"></button>`;
