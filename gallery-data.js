@@ -15,7 +15,9 @@ window.portfolioGalleryData = {
   'A Night With Aina Abdul 3.0': {
     items: [
       { type: 'image', src: '/assets/Header_AIna_1779470603094-S4LNJfvN.png', alt: 'A Night With Aina Abdul 3.0 concert visual' },
-      { type: 'image', src: '/assets/Billboard.jpg', alt: 'A Night With Aina Abdul billboard at Bukit Bintang' },
+      { type: 'image', src: '/assets/Billboard.jpg', alt: 'A Night With Aina Abdul 3.0 billboard at Bukit Bintang' },
+      { type: 'image', src: '/assets/IMG_1215.jpg', alt: 'Banting' },
+      { type: 'image', src: '/assets/IMG_1236.jpg', alt: 'Press Conferance Backdrop' },
       { type: 'video', youtubeId: '2iyb5nZwtAY', alt: 'Watch the Aina Abdul trailer' }
     ]
   },
