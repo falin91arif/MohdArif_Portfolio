@@ -123,7 +123,8 @@ const dialogCinemaTitle = document.querySelector('#dialog-cinema-title');
 const dialogVideoPlayer = document.querySelector('#dialog-video-player');
 
 function firstImage(projectName) {
-  return galleryData[projectName]?.items?.find((item) => item.type === 'image');
+  const gallery = galleryData[projectName];
+  return gallery?.cardImage || gallery?.items?.find((item) => item.type === 'image');
 }
 
 function renderCards(names, target) {

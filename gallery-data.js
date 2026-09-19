@@ -80,6 +80,7 @@ window.portfolioGalleryData = {
     ]
   },
   'Durioo Production Hub': {
+    cardImage: { type: 'image', src: '/assets/durioo-hub-overview.jpg', alt: 'Durioo Production Hub overview' },
     items: [
       { type: 'image', src: '/assets/durioo-dashboard.png', alt: 'Durioo Production Hub project health dashboard' },
       { type: 'image', src: '/assets/durioo-hub-overview.jpg', alt: 'Durioo Production Hub overview' },
