@@ -108,8 +108,8 @@ const projectData = {
   }
 };
 
-const featuredNames = ['A Night With Aina Abdul 3.0', 'Little Ammar', 'Didi & Friends × Darlie'];
-const moreNames = ['Konsert Hora Horey', 'Didi & Friends × SSPN', 'Didi & Friends × Genki', 'Sirah Nabawiyah', 'Durioo Production Hub'];
+const featuredNames = ['A Night With Aina Abdul 3.0', 'Durioo Production Hub', 'Little Ammar'];
+const moreNames = ['Didi & Friends × Darlie', 'Konsert Hora Horey', 'Didi & Friends × SSPN', 'Didi & Friends × Genki', 'Sirah Nabawiyah'];
 const galleryData = window.portfolioGalleryData || {};
 
 const dialog = document.querySelector('#project-dialog');
