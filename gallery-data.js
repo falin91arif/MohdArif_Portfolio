@@ -57,12 +57,16 @@ window.portfolioGalleryData = {
       { type: 'image', src: '/assets/SSPN_1779599641704-3GvelWHY.jpg', alt: 'Didi & Friends × SSPN campaign visual' },
       { type: 'image', src: '/assets/SSPN/Poster Social Media.jpg', alt: 'Poster' },
       { type: 'image', src: '/assets/SSPN/Color Contest.jpeg', alt: 'SSPN Contest' },
+      { type: 'image', src: '/assets/SSPN/Repid Launch.jpg', alt: 'Repid Bus Wrap Launch' },
       { type: 'video', youtubeId: '0Nzwnw4sLF8', alt: 'Watch the SSPN campaign video' }
     ]
   },
   'Didi & Friends × Genki': {
     items: [
       { type: 'image', src: '/assets/Genki_1779599567395-CbWlzOm2.jpg', alt: 'Didi & Friends × Genki campaign visual' },
+      { type: 'image', src: '/assets/GENKI/Social Media Post.jpg', alt: 'Social Media Post' },
+      { type: 'image', src: '/assets/GENKI/Collectable.jpg', alt: 'Social Media Post' },
+      { type: 'image', src: '/assets/GENKI/Merch.jpeg', alt: 'Social Media Post' },
       { type: 'video', youtubeId: 'rZQuAW49cAY', alt: 'Watch the Genki campaign video' }
     ]
   },
