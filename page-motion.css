@@ -1,0 +1,49 @@
+/* Small, purposeful motion that supports hierarchy without distracting from the work. */
+@keyframes nav-arrive {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dialog-arrive {
+  from { opacity: 0; transform: translateY(14px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.nav { animation: nav-arrive .65s cubic-bezier(.22, 1, .36, 1) both; }
+
+.reveal {
+  transition-duration: .68s;
+  transition-delay: var(--reveal-delay, 0ms);
+  transition-timing-function: cubic-bezier(.22, 1, .36, 1);
+}
+
+.impact-grid article.reveal { transform: translateY(16px) scale(.985); }
+.impact-grid article.reveal.visible { transform: translateY(0) scale(1); }
+
+.timeline article.reveal { transform: translateX(18px); }
+.timeline article.reveal.visible { transform: translateX(0); }
+
+.project-card img { transition: transform .5s cubic-bezier(.22, 1, .36, 1); }
+.project-card.visible:hover { transform: translateY(-7px); }
+.project-card:hover img { transform: scale(1.045); }
+
+.button .arrow,
+.text-button .arrow,
+.project-action .arrow,
+.footer .arrow { transition: transform .2s ease; }
+.button:hover .arrow,
+.text-button:hover .arrow,
+.project-card:hover .project-action .arrow,
+.footer a:hover .arrow { transform: translateX(3px) translateY(-.03em) scale(1.08); }
+.button[href="#work"]:hover .arrow { transform: translateY(3px) scale(1.08); }
+
+.skills span { transition-duration: .22s; }
+.skills span:hover { transform: translateY(-3px); }
+
+.project-dialog[open],
+.image-lightbox[open] { animation: dialog-arrive .3s cubic-bezier(.22, 1, .36, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .reveal, .reveal.visible, .impact-grid article.reveal, .impact-grid article.reveal.visible, .timeline article.reveal, .timeline article.reveal.visible { opacity: 1; transform: none; }
+}

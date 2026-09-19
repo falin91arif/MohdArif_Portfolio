@@ -217,6 +217,17 @@ const lightbox = document.querySelector('#image-lightbox');
 lightbox.querySelector('button').addEventListener('click', () => { lightbox.close(); });
 lightbox.addEventListener('click', (event) => { if (event.target === lightbox) lightbox.close(); });
 
+function prepareRevealGroup(selector, delay) {
+  document.querySelectorAll(selector).forEach((element, index) => {
+    element.classList.add('reveal');
+    element.style.setProperty('--reveal-delay', `${Math.min(index, 3) * delay}ms`);
+  });
+}
+
+prepareRevealGroup('.impact-grid article', 80);
+prepareRevealGroup('.project-grid .project-card', 85);
+prepareRevealGroup('.timeline article', 75);
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
