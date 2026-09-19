@@ -88,11 +88,28 @@ const projectData = {
     deliverables: 'Project blueprint, 2D animation pipeline, production workflows and guidelines, visual direction, story-development support, and final episode delivery.',
     outcome: 'A repeatable foundation for a new 2D series.',
     note: 'Developed from scratch and refined through audience feedback to improve both production quality and efficiency.'
+  },
+  'Durioo Production Hub': {
+    category: 'Internal production tool',
+    summary: 'Built an internal production hub that replaces manual tracking with shared project updates.',
+    role: 'Creator & Product Builder',
+    facts: [['Context', '4 months · 13-person team']],
+    challenge: 'Bring fragmented Google Sheets, timelines, and status checks into one workflow—without manual follow-up.',
+    led: 'Created the product from research through delivery, mapping the production workflow into a practical internal tool for the team.',
+    context: 'A private internal tool used by Durioo’s 13-person production department. It currently connects Google Chat and Google Drive.',
+    deliverables: 'Project-health tracking, preset production timelines, task monitoring, Google Chat updates, and Google Drive integration.',
+    outcome: 'One shared view of production health.',
+    note: 'Replaced a daily 30–60-minute cross-sheet review with a single update to the team’s Google Chat group.',
+    execution: [
+      ['Workflow design', 'Mapped the team’s process into preset timeline rules and project-health views.'],
+      ['Product build', 'Researched, designed, and built the tool end to end using AI-assisted development.'],
+      ['Team updates', 'Connected Google Chat and Drive so one action shares progress with the group.']
+    ]
   }
 };
 
 const featuredNames = ['A Night With Aina Abdul 3.0', 'Little Ammar', 'Didi & Friends × Darlie'];
-const moreNames = ['Konsert Hora Horey', 'Didi & Friends × SSPN', 'Didi & Friends × Genki', 'Sirah Nabawiyah'];
+const moreNames = ['Konsert Hora Horey', 'Didi & Friends × SSPN', 'Didi & Friends × Genki', 'Sirah Nabawiyah', 'Durioo Production Hub'];
 const galleryData = window.portfolioGalleryData || {};
 
 const dialog = document.querySelector('#project-dialog');
@@ -184,7 +201,7 @@ const moreProjects = document.querySelector('#more-projects');
 toggle.addEventListener('click', () => {
   const isOpen = toggle.getAttribute('aria-expanded') === 'true';
   toggle.setAttribute('aria-expanded', String(!isOpen));
-  toggle.innerHTML = isOpen ? 'Browse all projects (4) <span class="arrow">↓</span>' : 'Hide project library <span class="arrow">↑</span>';
+  toggle.innerHTML = isOpen ? `Browse all projects (${moreNames.length}) <span class="arrow">↓</span>` : 'Hide project library <span class="arrow">↑</span>';
   moreProjects.hidden = isOpen;
 });
 

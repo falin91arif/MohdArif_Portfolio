@@ -78,5 +78,14 @@ window.portfolioGalleryData = {
       { type: 'image', src: '/assets/SIRAH/6.jpg', alt: 'Background concept art' },
       { type: 'video', youtubeId: 'GW6OpWRKFds', alt: 'Watch the Sirah Nabawiyah trailer' }
     ]
+  },
+  'Durioo Production Hub': {
+    items: [
+      { type: 'image', src: '/assets/durioo-dashboard.png', alt: 'Durioo Production Hub project health dashboard' },
+      { type: 'image', src: '/assets/durioo-hub-overview.jpg', alt: 'Durioo Production Hub overview' },
+      { type: 'image', src: '/assets/durioo-timeline.png', alt: 'Durioo Production Hub timeline planning' },
+      { type: 'image', src: '/assets/durioo-stage-view.png', alt: 'Durioo Production Hub episode stage view' },
+      { type: 'image', src: '/assets/durioo-team-view.png', alt: 'Durioo Production Hub team visibility view' }
+    ]
   }
 };
