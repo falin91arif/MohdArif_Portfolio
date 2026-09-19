@@ -131,7 +131,7 @@ function renderCards(names, target) {
   target.innerHTML = names.map((name) => {
     const project = projectData[name];
     const visual = firstImage(name);
-    return `<button class="project-card reveal" type="button" data-project="${name}"><span class="project-card-inner"><img src="${visual?.src || ''}" alt="${visual?.alt || name}"><span class="project-card-content"><span class="project-type">${project.category}</span><strong class="project-card-title">${name}</strong><span class="project-card-summary">${project.summary}</span></span><span class="project-action">View work <span class="arrow">↗</span></span></span></button>`;
+    return `<button class="project-card reveal" type="button" data-project="${name}"><span class="project-card-inner"><img src="${visual?.src || ''}" alt="${visual?.alt || name}"><span class="project-card-content"><span class="project-type">${project.category}</span><strong class="project-card-title">${name}</strong><span class="project-card-summary">${project.summary}</span></span><span class="project-action">View work</span></span></button>`;
   }).join('');
 }
 
@@ -202,7 +202,7 @@ const moreProjects = document.querySelector('#more-projects');
 toggle.addEventListener('click', () => {
   const isOpen = toggle.getAttribute('aria-expanded') === 'true';
   toggle.setAttribute('aria-expanded', String(!isOpen));
-  toggle.innerHTML = isOpen ? `Browse all projects (${moreNames.length}) <span class="arrow">↓</span>` : 'Hide project library <span class="arrow">↑</span>';
+  toggle.textContent = isOpen ? `Browse all projects (${moreNames.length})` : 'Hide project library';
   moreProjects.hidden = isOpen;
 });
 
