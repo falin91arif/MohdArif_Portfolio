@@ -1,6 +1,7 @@
 const projectData = {
   'A Night With Aina Abdul 3.0': {
     category: 'Live entertainment',
+    tags: ['Visual Identity', 'Live Entertainment', 'Campaign Design'],
     summary: 'Designed a unified visual campaign for Aina Abdul’s sold-out Axiata Arena concert.',
     role: 'Graphic Designer',
     facts: [['Scope', '5 merchandise products'], ['Partners', 'Artist team + Director']],
@@ -19,6 +20,7 @@ const projectData = {
   },
   'Little Ammar': {
     category: 'Original IP',
+    tags: ['Original IP', 'Animation Production', '3D'],
     summary: 'Built a nursery-rhyme IP for ages 0–5 from early development through scalable production.',
     role: 'Line Producer',
     facts: [['Budget', 'MYR 1M+ / 4 seasons']],
@@ -31,6 +33,7 @@ const projectData = {
   },
   'Didi & Friends × Darlie': {
     category: 'Branded content',
+    tags: ['Branded Content', 'Creative Producer', 'Marketing Campaign'],
     summary: 'Led a brand collaboration that reached 5.2M+ YouTube views.',
     role: 'Creative Producer',
     facts: [['Result', '5.2M+ YouTube views']],
@@ -43,6 +46,7 @@ const projectData = {
   },
   'Konsert Hora Horey': {
     category: 'Feature film',
+    tags: ['Feature Film', 'Post-Production', 'Cinema Release'],
     summary: 'Led post-production delivery for the Didi & Friends feature film, from edit coordination through final mastering.',
     role: 'Post-Production Manager',
     facts: [['Result', 'MYR 2.7M+ box office']],
@@ -55,6 +59,7 @@ const projectData = {
   },
   'Didi & Friends × SSPN': {
     category: 'Branded content',
+    tags: ['Branded Content', 'Creative Producer', 'Marketing Campaign'],
     summary: 'Reworked a time-sensitive production plan to secure FINAS approval and deliver a campaign film and TVC cutdown on time.',
     role: 'Creative Producer',
     facts: [['Value', 'MYR 200K+ campaign']],
@@ -67,6 +72,7 @@ const projectData = {
   },
   'Didi & Friends × Genki': {
     category: 'Branded content',
+    tags: ['Branded Content', 'Creative Producer', 'Marketing Campaign'],
     summary: 'Supported an international brand collaboration from client communication through final edit, on-time delivery, and post-launch reporting.',
     role: 'Creative Producer',
     facts: [['Result', '937K views']],
@@ -79,6 +85,7 @@ const projectData = {
   },
   'Sirah Nabawiyah': {
     category: 'Original IP',
+    tags: ['Original IP', 'Animation Production', '2D'],
     summary: 'Built a 2D animated series from the ground up, creating its production blueprint and visual direction.',
     role: 'Line Producer',
     facts: [['Platform', 'Top Sirah series in Durioo+']],
@@ -91,6 +98,7 @@ const projectData = {
   },
   'Durioo Production Hub': {
     category: 'Internal production tool',
+    tags: ['Productivity Tool', 'AI-Assisted Build', 'Workflow Design'],
     summary: 'Built an internal production hub that replaces manual tracking with shared project updates.',
     role: 'Creator & Product Builder',
     facts: [['Context', '4 months · 13-person team']],
@@ -131,7 +139,8 @@ function renderCards(names, target) {
   target.innerHTML = names.map((name) => {
     const project = projectData[name];
     const visual = firstImage(name);
-    return `<button class="project-card reveal" type="button" data-project="${name}"><span class="project-card-inner"><img src="${visual?.src || ''}" alt="${visual?.alt || name}"><span class="project-card-content"><span class="project-type">${project.category}</span><strong class="project-card-title">${name}</strong><span class="project-card-summary">${project.summary}</span></span><span class="project-action">View work</span></span></button>`;
+    const tags = project.tags.map((tag) => `<span>${tag}</span>`).join('');
+    return `<button class="project-card reveal" type="button" data-project="${name}"><span class="project-card-inner"><img src="${visual?.src || ''}" alt="${visual?.alt || name}"><span class="project-card-content"><span class="project-type">${project.category}</span><strong class="project-card-title">${name}</strong><span class="project-card-summary">${project.summary}</span><span class="project-tags" aria-label="Project tags">${tags}</span></span><span class="project-action">View work</span></span></button>`;
   }).join('');
 }
 

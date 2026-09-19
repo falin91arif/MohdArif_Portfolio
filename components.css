@@ -13,3 +13,22 @@
   font-size: var(--body);
   line-height: 1.5;
 }
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 18px 0 17px;
+}
+
+.project-tags span {
+  padding: 6px 9px;
+  border: 1px solid #dce5f8;
+  border-radius: 999px;
+  background: #f7faff;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
