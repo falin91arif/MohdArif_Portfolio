@@ -73,8 +73,8 @@ window.portfolioGalleryData = {
   'Sirah Nabawiyah': {
     items: [
       { type: 'image', src: '/assets/Sirah_1779599680647-w5bpt-NW.png', alt: 'Sirah Nabawiyah series visual' },
-      { type: 'image', src: '/assets/SIRAH/Scene.png', alt: 'One of the scene in the Episode' },
       { type: 'image', src: '/assets/SIRAH/A20.jpg', alt: 'Concept Mahmod' },
+      { type: 'image', src: '/assets/SIRAH/Scene.png', alt: 'One of the scene in the Episode' },
       { type: 'image', src: '/assets/SIRAH/6.jpg', alt: 'Concept Background' },
       { type: 'video', youtubeId: 'GW6OpWRKFds', alt: 'Watch the Sirah Nabawiyah trailer' }
     ]
