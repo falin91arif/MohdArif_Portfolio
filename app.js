@@ -18,6 +18,25 @@ const projectData = {
       ['Merchandise & on-site', 'Designed five official merchandise items and stage and venue graphics seen by 10,000 attendees.']
     ]
   },
+  'Ziana Zain Concert 2024': {
+    category: 'Live entertainment',
+    tags: ['Merchandise Design', 'Artist Branding', 'Live Entertainment'],
+    summary: 'Created a merchandise identity and five-piece collection for Malaysian music icon Ziana Zain.',
+    role: 'Merchandise Designer',
+    facts: [['Scope', '5 merchandise products'], ['Outcome', 'Sold out']],
+    quickFacts: [['Role', 'Merchandise Designer'], ['Scope', '5 merchandise products'], ['Outcome', 'Sold out']],
+    challenge: 'Create a collection that respected Ziana Zain’s 30-year legacy while feeling fresh, cohesive, and desirable for concert audiences.',
+    led: 'Researched her brand, created the logo-led visual direction, designed the merchandise collection, managed print-quality checks, and supported social-media promotion.',
+    context: 'A concert merchandise project for Ziana Zain Concert 2024, prepared for customers in Malaysia, Singapore, and Brunei.',
+    deliverables: 'Brand logo, cap, T-shirt, lanyard, tumbler, poster, social-media promotional assets, and print-production quality checks.',
+    outcome: 'A sold-out merchandise collection.',
+    note: 'All orders were delivered before concert day across Malaysia, Singapore, and Brunei.',
+    execution: [
+      ['Brand identity', 'Researched her brand and created a logo-led visual direction.'],
+      ['Merchandise collection', 'Designed a cap, T-shirt, lanyard, tumbler, and poster.'],
+      ['Production & launch', 'Managed print-quality checks and supported social-media promotion.']
+    ]
+  },
   'Little Ammar': {
     category: 'Original IP',
     tags: ['Original IP', 'Animation Production', '3D'],
@@ -117,7 +136,7 @@ const projectData = {
 };
 
 const featuredNames = ['A Night With Aina Abdul 3.0', 'Durioo Production Hub', 'Little Ammar'];
-const moreNames = ['Didi & Friends × Darlie', 'Konsert Hora Horey', 'Didi & Friends × SSPN', 'Didi & Friends × Genki', 'Sirah Nabawiyah'];
+const moreNames = ['Ziana Zain Concert 2024', 'Didi & Friends × Darlie', 'Konsert Hora Horey', 'Didi & Friends × SSPN', 'Didi & Friends × Genki', 'Sirah Nabawiyah'];
 const galleryData = window.portfolioGalleryData || {};
 
 const dialog = document.querySelector('#project-dialog');
