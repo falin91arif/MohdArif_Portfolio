@@ -59,7 +59,14 @@
 .image-lightbox:not([open]) { display: none; }
 .image-lightbox::backdrop { background: transparent; }
 .image-lightbox img { display: block; width: auto; max-width: 92vw; height: auto; max-height: 88dvh; margin: auto; object-fit: contain; }
-.image-lightbox button { position: fixed; z-index: 1; top: 22px; right: 22px; }
+.image-lightbox button { position: fixed; z-index: 1; display: grid; width: 46px; height: 46px; place-items: center; border: 1px solid rgba(255, 255, 255, .4); border-radius: 50%; background: rgba(9, 19, 39, .76); color: #fff; cursor: pointer; font: 400 38px/1 Arial, Helvetica, sans-serif; transition: background .18s ease, transform .18s ease; }
+.image-lightbox button:hover { background: var(--blue); transform: scale(1.06); }
+.image-lightbox .image-lightbox-close { top: 22px; right: 22px; }
+.image-lightbox .image-lightbox-previous, .image-lightbox .image-lightbox-next { top: 50%; transform: translateY(-50%); }
+.image-lightbox .image-lightbox-previous { right: auto; left: 24px; }
+.image-lightbox .image-lightbox-next { right: 24px; left: auto; }
+.image-lightbox .image-lightbox-previous:hover, .image-lightbox .image-lightbox-next:hover { transform: translateY(-50%) scale(1.06); }
+.image-lightbox-counter { position: fixed; bottom: 24px; left: 50%; margin: 0; padding: 8px 12px; border-radius: 999px; background: rgba(9, 19, 39, .76); color: #fff; font-size: 13px; font-weight: 800; letter-spacing: .07em; transform: translateX(-50%); }
 
 @media (max-width: 900px) {
   .project-dialog { height: calc(100dvh - 16px); }
@@ -68,6 +75,14 @@
   .dialog-gallery-panel { order: -1; padding-bottom: 32px; }
   .dialog-project-details { border-right: 0; border-bottom: 1px solid #e2eaf5; }
   .dialog-cinema { position: fixed; inset: 8px; padding: 28px 24px; border-radius: 24px; }
+}
+@media (max-width: 620px) {
+  .image-lightbox { padding: 18px; }
+  .image-lightbox button { width: 42px; height: 42px; font-size: 34px; }
+  .image-lightbox .image-lightbox-close { top: 16px; right: 16px; }
+  .image-lightbox .image-lightbox-previous { left: 12px; }
+  .image-lightbox .image-lightbox-next { right: 12px; }
+  .image-lightbox-counter { bottom: 16px; }
 }
 @media (max-width: 620px) {
   .project-dialog { width: calc(100% - 16px); border-radius: 23px; }

@@ -178,11 +178,33 @@ function openCinema(item) {
   dialogVideoPlayer.innerHTML = `<iframe title="${dialogTitle.textContent} trailer" src="https://www.youtube-nocookie.com/embed/${item.youtubeId}?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
 }
 
-function openImage(item) {
+let lightboxImages = [];
+let lightboxIndex = 0;
+
+function renderLightboxImage() {
+  const item = lightboxImages[lightboxIndex];
+  if (!item) return;
   const image = lightbox.querySelector('img');
   image.src = item.src;
   image.alt = item.alt;
+  const hasMultipleImages = lightboxImages.length > 1;
+  lightboxPrevious.hidden = !hasMultipleImages;
+  lightboxNext.hidden = !hasMultipleImages;
+  lightboxCounter.hidden = !hasMultipleImages;
+  lightboxCounter.textContent = `${lightboxIndex + 1} / ${lightboxImages.length}`;
+}
+
+function openImage(items, index) {
+  lightboxImages = items;
+  lightboxIndex = index;
+  renderLightboxImage();
   if (!lightbox.open) lightbox.showModal();
+}
+
+function moveLightboxImage(direction) {
+  if (lightboxImages.length < 2) return;
+  lightboxIndex = (lightboxIndex + direction + lightboxImages.length) % lightboxImages.length;
+  renderLightboxImage();
 }
 
 function openProject(name) {
@@ -211,7 +233,7 @@ function openProject(name) {
     dialogVideoFeature.onclick = () => openCinema(video);
   }
   galleryTrack.innerHTML = images.map((item, index) => `<button type="button" class="gallery-item" data-gallery-index="${index}" aria-label="View ${item.alt}"><img src="${item.src}" alt="${item.alt}"><span>${item.alt}</span></button>`).join('');
-  galleryTrack.querySelectorAll('.gallery-item').forEach((button) => button.addEventListener('click', () => openImage(images[Number(button.dataset.galleryIndex)])));
+  galleryTrack.querySelectorAll('.gallery-item').forEach((button) => button.addEventListener('click', () => openImage(images, Number(button.dataset.galleryIndex))));
   closeCinema();
   dialog.showModal();
   document.body.classList.add('dialog-open');
@@ -242,8 +264,24 @@ dialog.addEventListener('close', () => {
 document.querySelector('#dialog-close-cinema').addEventListener('click', closeCinema);
 
 const lightbox = document.querySelector('#image-lightbox');
-lightbox.querySelector('button').addEventListener('click', () => { lightbox.close(); });
+const lightboxPrevious = lightbox.querySelector('.image-lightbox-previous');
+const lightboxNext = lightbox.querySelector('.image-lightbox-next');
+const lightboxCounter = lightbox.querySelector('.image-lightbox-counter');
+lightbox.querySelector('.image-lightbox-close').addEventListener('click', () => { lightbox.close(); });
+lightboxPrevious.addEventListener('click', () => moveLightboxImage(-1));
+lightboxNext.addEventListener('click', () => moveLightboxImage(1));
 lightbox.addEventListener('click', (event) => { if (event.target === lightbox) lightbox.close(); });
+document.addEventListener('keydown', (event) => {
+  if (!lightbox.open) return;
+  if (event.key === 'ArrowLeft') {
+    event.preventDefault();
+    moveLightboxImage(-1);
+  }
+  if (event.key === 'ArrowRight') {
+    event.preventDefault();
+    moveLightboxImage(1);
+  }
+});
 
 function prepareRevealGroup(selector, delay) {
   document.querySelectorAll(selector).forEach((element, index) => {
