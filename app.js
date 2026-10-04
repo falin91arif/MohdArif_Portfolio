@@ -189,7 +189,7 @@ function openProject(name) {
   const project = projectData[name];
   const gallery = galleryData[name];
   if (!project || !gallery) return;
-  document.querySelector('#dialog-type').textContent = `${project.category} · Project story`;
+  document.querySelector('#dialog-type').textContent = `Feature project · ${project.category}`;
   dialogTitle.textContent = name;
   document.querySelector('#dialog-subtitle').textContent = project.summary;
   document.querySelector('#dialog-challenge').textContent = project.challenge;

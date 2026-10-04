@@ -4,7 +4,7 @@
 .project-dialog .dialog-topbar { min-height: 67px; padding: 0 31px; }
 .dialog-split-layout { display: grid; grid-template-columns: minmax(360px, .88fr) minmax(0, 1.32fr); height: calc(100% - 67px); min-height: 0; }
 .dialog-project-details { min-height: 0; padding: 46px 42px 38px; overflow-y: auto; border-right: 1px solid #e2eaf5; }
-.dialog-project-kicker, .dialog-challenge > p, .dialog-execution > p, .dialog-gallery-header p { margin: 0 0 11px; color: var(--blue); font-size: var(--label); font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+.dialog-challenge > p, .dialog-execution > p, .dialog-gallery-header p { margin: 0 0 11px; color: var(--blue); font-size: var(--label); font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
 .dialog-project-details h2 { margin: 0; color: #121827; font-size: clamp(40px, 4vw, 62px); font-weight: 800; letter-spacing: -.07em; line-height: .94; }
 .dialog-subtitle { margin: 24px 0 28px; color: #66748a; font-size: 19px; font-weight: 700; letter-spacing: -.025em; line-height: 1.42; }
 .project-dialog .dialog-fact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 0; border-top: 1px solid #e2eaf5; }
